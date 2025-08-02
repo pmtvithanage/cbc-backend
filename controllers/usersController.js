@@ -127,3 +127,18 @@ export function isAdmin(req) {
     // If the user is authenticated and is an admin, return true
     return true;
 }
+
+export function isCustomer(req) {
+    // Check if the user is authorized to access this route
+    if (req.user == null) {
+        return false;
+    }
+
+    // Check if the user is a customer
+    if (req.user.role !== 'user') {
+        return false;
+    }
+
+    // If the user is authenticated and is a customer, return true
+    return true;
+}
