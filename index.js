@@ -49,7 +49,7 @@ mongoose.connect(connectionString).then(() => {
 }
 )
 
-app.use("/students",studentsRouter)
+
 app.use("/users",usersRouter)
 app.use("/products",productsRouter)
 
